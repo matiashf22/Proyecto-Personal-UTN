@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Integrador</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+        
+        <style>
+            img {
+                width: 100%;
+            }
+        </style>
+    
+    <style> 
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+    
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    
+        nav a:hover {
+            background-color: #0b0b0b;
+            color: rgb(240, 84, 84);
+        }
+    </style>
+        
+</head>
+<body>
+    <nav>
+        
+		<ul>
+			<li><a href="#nosotros">Nosotros</a></li>
+			<li><a href="#acerca de mi">Acerca de Mi</a></li>
+			<li><a href="#cotizar">Cotizar</a></li>
+			<li><a href="#contacto">Contacto</a></li>
+		</ul>
+        <img src="img/encabezado.jpg" alt="">
+	</nav>
+    <section id="nosotros">
+		<h2>Nosotros</h2>
+		<p>Somos una agencia de Productores Asesores de Seguros con mas de 20 años de experiencia y trayectoria en el rubro asegurador, nos especializamos en Seguros de Riesgos del Trabajo (ART) donde capacitamos continuamente a los empleadores y empleados para minimizar los accidentes laborales, tamnién ofrecemos Seguros de Accidentes Personales para empleados ocasionales y Profesionales.
+            Desde el año 2000 ofrecemos las mejores aseguradoras para Seguros Automotores y Motovehículos, ofreciendo coberturas completas y haciendo un seguimiento post venta, ofreciendo atención personalizada a cada asegurado, asesorando en siniestros y tambien en la contratación de coberturas que sean acordes a los vehículos a asegurar.</p>
+	<section id="acerca de mi">
+		<h2>Acerca de Mi</h2>
+		<p>Mi nombre es Fernandez Matías, soy Contador Público Nacional, estoy en el rubro seguros desde el año 2003, comencé como personal administrativo de un Productor muy importante, al cabo de unos años, y luego de formarme profesionalmente, me matriculé y pase a formar sociedad con quien era mi jefe, hoy manejamos mas de 15 compañías y mas de 4000 asegurados en todos los ramos, mi objetivo es brindar la mejor atencion y asesoramiento a cada uno de nuestros asegurados, para de esa manera satisfacer las necesitades asegurativas de cada uno de ellos, acompañando dicho proceso con las mejores compañias del mercado y con costos realmente competitivos.</p>
+	</section>
+	<section id="cotizar">
+		<h2>Cotizar</h2>
+		<h3>Cargá tus datos para realizar la cotización</h3>
+	</section>
+    
+    <form id="quote-form">
+        <label for="customer-name">Apellido y Nombre:</label>
+        <input type="text" id="customer-name" name="customer-name">
+      
+        <label for="product-name">Vehículo a Cotizar:</label>
+        <input type="text" id="product-name" name="product-name">
+      
+        <label for="product-price">Precio Actual de su Seguro:</label>
+        <input type="number" id="product-price" name="product-price">
+      
+        <button id="preview-btn" type="button">Vista previa</button>
+        <button id="pdf-btn" type="button">Exportar a PDF</button>
+        <button id="submit" type="button">Enviar</button>
+        
+      </form>
+      
+      
+      <style>
+        /* Estilos para los campos de entrada de texto */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 16px;
+          font-family: Arial, sans-serif;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      
+        /* Estilos para las etiquetas de los campos de entrada de texto */
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+        }
+      
+        /* Estilos para el botón de envío */
+        button[id="submit"] {
+          background-color: #008CBA;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          cursor: pointer;
+        }
+        button[id="preview-btn"] {
+          background-color: #008CBA;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          cursor: pointer;
+        }
+        button[id="pdf-btn"] {
+          background-color: #008CBA;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          cursor: pointer;
+        }
+        
+      
+        /* Estilos para el formulario en general */
+        form {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #f2f2f2;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+
+      
+	<section id="contacto">
+		<h2>Contacto</h2>
+		<p><table>
+            <tr>
+              <td><i class="fas fa-envelope"></i></td>
+              <td>matiashf22@gmail.com</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-phone"></i></td>
+              <td>0261-156672177</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-map-marker-alt"></i></td>
+              <td>Palmira, Mendoza, Argentina</td>
+            </tr>
+          </table>
+          </p>
+          <script src="ExportacionPDF.js"></script>
+	</section>
+
+</body>
+
+    <footer>
+        
+        Instagram Tweeter Facebook  Discord     
+    </footer>
+      
+      
+      
+   
+
+
+
+ 
+  
+ 
+
+    
+
+</html>
